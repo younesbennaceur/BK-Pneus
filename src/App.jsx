@@ -4,6 +4,7 @@ import Actus from './pages/Actus'
 import Contact from './pages/Contact'
 import NosPhotos from './pages/NosPhotos'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path='/nosphotos' element={<NosPhotos/>} />
        
       </Routes>
+      <Footer/>
+
     </div>
   )
 }
