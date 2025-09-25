@@ -5,6 +5,7 @@ import Contact from './pages/Contact'
 import NosPhotos from './pages/NosPhotos'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
        
       </Routes>
       <Footer/>
+      <WhatsAppButton/>
 
     </div>
   )

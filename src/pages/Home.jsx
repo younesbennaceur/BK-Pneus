@@ -1,25 +1,31 @@
 import Hero from '../components/Hero'
-import About from '../components/About'
 import Devis from '../components/Devis'
 import Services from '../components/Services'
-import Infos from '../components/Infos'
+import Contact from './Contact'
+
 import Offers from '../components/Offers'
-import Batterie from '../components/Batterie'
+import Faqs from '../components/Faqs'
 import Reviews from '../components/Reviews'
 import Blogs from '../components/Blogs'
+import Map from '../components/Map'
 
 export default function Home() {
   return (
     <div>
       
         <Hero/>
-        <About/>
-        <Devis/>
         <Services/>
-        <Infos/>
+        
+        <Map/>
+        <Devis/>
+        
+        
         <Offers/>
-        <Batterie/>
+        
+       
         <Reviews/>
+        <Contact/>
+        <Faqs/>
         <Blogs/>
         
         

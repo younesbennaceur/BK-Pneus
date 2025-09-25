@@ -1,7 +1,15 @@
 import React from 'react'
+import Contact from '../components/Contact'
 
-export default function Contact() {
+export default function Contactus() {
   return (
-    <div>Contact</div>
+    <div className='bg-black' >
+      <div className=' pt-24'>
+        <Contact />
+
+      </div>
+ 
+    </div>
+   
   )
 }

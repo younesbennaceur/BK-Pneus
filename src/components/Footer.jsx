@@ -166,7 +166,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-sm sm:text-base text-gray-500">
           <p className="font-poppins mb-4 sm:mb-0">
-            © 2025 OurBlog. All rights reserved.
+            © 2025 MIAgency. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="hover:text-gray-300 transition-colors duration-200">
