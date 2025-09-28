@@ -6,6 +6,9 @@ import NosPhotos from './pages/NosPhotos'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
+import Zones from './pages/Zones'
+import Services from './pages/Services'
+import BlogDetail from './components/BlogsDetails'
 
 function App() {
   return (
@@ -16,7 +19,10 @@ function App() {
         {/* Ajoutez d'autres routes ici si nécessaire */}
         <Route path='/actus' element={<Actus/>} />
         <Route path='/contact' element={<Contact/>} />
+        <Route path='/blog/:id' element={<BlogDetail/>} />
         <Route path='/nosphotos' element={<NosPhotos/>} />
+        <Route path='/Zones_dintervention' element={<Zones/>} />
+        <Route path='/services' element={<Services/>} />
        
       </Routes>
       <Footer/>

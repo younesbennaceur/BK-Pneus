@@ -64,10 +64,10 @@ export default function Footer() {
               <Phone size={20} className="text-white sm:w-6 sm:h-6" />
             </div>
             <h3 className="font-oswald text-lg sm:text-xl font-bold text-white mb-2">
-              0764466621
+              06.52.69.32.93
             </h3>
             <p className="font-poppins text-sm sm:text-base text-red-500 font-medium">
-              Devis Gratuit
+              01.48.49.69.32
             </p>
           </div>
           
@@ -77,10 +77,10 @@ export default function Footer() {
               <MapPin size={20} className="text-white sm:w-6 sm:h-6" />
             </div>
             <h3 className="font-oswald text-lg sm:text-xl font-bold text-white mb-2">
-              179 avenue Aristide Briand
+              185 Avenue Galliéni
             </h3>
             <p className="font-poppins text-sm sm:text-base text-red-500 font-medium">
-              93190 Livry Gargan
+              93140 Bondy
             </p>
           </div>
           
@@ -90,10 +90,10 @@ export default function Footer() {
               <Mail size={20} className="text-white sm:w-6 sm:h-6" />
             </div>
             <h3 className="font-oswald text-lg sm:text-xl font-bold text-white mb-2">
-              contact@bkpneus.fr
+              contact@bkpneus-bondy.com
             </h3>
             <p className="font-poppins text-sm sm:text-base text-red-500 font-medium">
-              bkpneus@hotmail.com
+              Réponse sous 2h
             </p>
           </div>
           

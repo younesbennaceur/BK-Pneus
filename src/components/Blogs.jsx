@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Calendar, Eye } from 'lucide-react';
 
-export default function Blog() {
+export default function Actus() {
+  const navigate = useNavigate();
+
+  const handleArticleClick = (articleId) => {
+    navigate(`/blog/${articleId}`);
+  };
+
   const articles = [
     {
       id: 1,
@@ -16,7 +23,7 @@ export default function Blog() {
     {
       id: 2,
       category: "pneu",
-      title: "Camions et utilitaires – les bons réflexes en cas d'éclatement",
+      title: "Guide complet de maintenance des pneus",
       excerpt: "Guide complet pour réagir en cas d'éclatement de pneu sur véhicule utilitaire.",
       image: "/blog2.jpg",
       date: "16 Aug, 2024",
@@ -26,7 +33,7 @@ export default function Blog() {
     {
       id: 3,
       category: "pneu",
-      title: "Camions et utilitaires – les bons réflexes en cas d'éclatement",
+      title: "Prévention et sécurité routière",
       excerpt: "Conseils de sécurité et maintenance préventive pour éviter les éclatements.",
       image: "/blog3.png",
       date: "16 Aug, 2024",
@@ -59,7 +66,10 @@ export default function Blog() {
         {/* Article principal featured */}
         {featuredArticle && (
           <div className="mb-8 sm:mb-12 md:mb-16">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-lg ">
+            <div 
+              className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer transition-all duration-300 group"
+              onClick={() => handleArticleClick(featuredArticle.id)}
+            >
               <div className="relative">
                 <img 
                   src={featuredArticle.image} 
@@ -74,7 +84,7 @@ export default function Blog() {
               </div>
               
               <div className="p-6 sm:p-8 md:p-10">
-                <h2 className="font-poppins text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                <h2 className="font-poppins text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight group-hover:text-red-600 transition-colors">
                   {featuredArticle.title}
                 </h2>
                 
@@ -86,7 +96,9 @@ export default function Blog() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4 sm:space-x-6">
                     <div className="flex items-center space-x-2">
-                      <img src="/bk-logo-small.png" alt="BK-PNEUS" className="w-6 h-6 rounded-full" />
+                      <div className="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-xs">BK</span>
+                      </div>
                       <span className="font-poppins text-sm sm:text-base font-medium text-gray-900">BK-PNEUS</span>
                     </div>
                     <div className="flex items-center space-x-2 text-gray-500">
@@ -107,7 +119,11 @@ export default function Blog() {
         {/* Articles secondaires */}
         <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {regularArticles.map((article) => (
-            <div key={article.id} className="bg-white rounded-3xl overflow-hidden shadow-lg ">
+            <div 
+              key={article.id} 
+              className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer  transition-all duration-300 group"
+              onClick={() => handleArticleClick(article.id)}
+            >
               <div className="relative">
                 <img 
                   src={article.image} 
@@ -122,7 +138,7 @@ export default function Blog() {
               </div>
               
               <div className="p-4 sm:p-6">
-                <h3 className="font-poppins text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight">
+                <h3 className="font-poppins text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight group-hover:text-red-600 transition-colors">
                   {article.title}
                 </h3>
                 
@@ -130,7 +146,9 @@ export default function Blog() {
                 <div className="flex items-center justify-between text-sm">
                   <div className="flex items-center space-x-3">
                     <div className="flex items-center space-x-2">
-                      <img src="/bk-logo-small.png" alt="BK-PNEUS" className="w-5 h-5 rounded-full" />
+                      <div className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-xs">BK</span>
+                      </div>
                       <span className="font-poppins font-medium text-gray-900">BK-PNEUS</span>
                     </div>
                   </div>
@@ -151,11 +169,7 @@ export default function Blog() {
         </div>
 
         {/* Bouton Voir tous */}
-        <div className="text-center">
-          <button className="bg-white border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-poppins font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105">
-            voir tous
-          </button>
-        </div>
+        
       </div>
     </div>
   );

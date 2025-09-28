@@ -8,67 +8,63 @@ export default function NosPhotos() {
   const photos = [
     {
       id: 1,
-      src: "/Service1.png",
+      src: "/photo1.jpg",
       alt: "Montage de pneu en cours",
-      title: "Montage professionnel"
+      title: "Intervention Place Vendôme"
     },
     {
       id: 2,
       src: "/photo2.jpg",
       alt: "Équipement de montage",
-      title: "Équipement moderne"
+      title: "Camion d'intervention BK Pneus"
     },
     {
       id: 3,
       src: "/photo3.jpg",
       alt: "Intervention sur site",
-      title: "Intervention à domicile"
+      title: "Démontage de roue à domicile"
     },
     {
       id: 4,
       src: "/photo4.jpg",
       alt: "Réparation de pneu",
-      title: "Réparation express"
+      title: "Intervention sur Ferrari"
     },
     {
       id: 5,
       src: "/photo5.jpg",
       alt: "Stock de pneus",
-      title: "Large gamme de pneus"
+      title: "Service véhicules haut de gamme"
     },
     {
       id: 6,
       src: "/photo6.jpg",
       alt: "Équilibrage des roues",
-      title: "Équilibrage précis"
+      title: "Stock professionnel de pneus"
     }
   ];
 
   const videos = [
     {
       id: 1,
-      thumbnail: "/video1-thumb.jpg",
       src: "/video1.mp4",
       title: "Processus de montage",
       duration: "2:30"
     },
     {
       id: 2,
-      thumbnail: "/video2-thumb.jpg",
       src: "/video2.mp4",
       title: "Intervention d'urgence",
       duration: "1:45"
     },
     {
       id: 3,
-      thumbnail: "/video3-thumb.jpg",
       src: "/video3.mp4",
       title: "Réparation rapide",
       duration: "3:15"
     },
     {
       id: 4,
-      thumbnail: "/video4-thumb.jpg",
       src: "/video4.mp4",
       title: "Équilibrage professionnel",
       duration: "2:00"
@@ -155,8 +151,22 @@ export default function NosPhotos() {
                   className="backdrop-blur-md bg-black/30 border border-white/20 rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer group"
                   onClick={() => openModal(photo, 'photo')}
                 >
-                  <div className="aspect-video bg-gray-800 flex items-center justify-center relative overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                  <div className="aspect-video bg-black flex items-center justify-center relative overflow-hidden">
+                    <img 
+                      src={photo.src} 
+                      alt={photo.alt}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Si l'image ne charge pas, afficher l'icône par défaut
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback si l'image ne charge pas */}
+                    <div 
+                      className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center absolute inset-0" 
+                      style={{ display: 'none' }}
+                    >
                       <Image size={48} className="text-gray-500" />
                     </div>
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
@@ -178,8 +188,22 @@ export default function NosPhotos() {
                   className="backdrop-blur-md bg-black/30 border border-white/20 rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 cursor-pointer group"
                   onClick={() => openModal(video, 'video')}
                 >
-                  <div className="aspect-video bg-gray-800 flex items-center justify-center relative overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                  <div className="aspect-video bg-black flex items-center justify-center relative overflow-hidden">
+                    <img 
+                      src={video.thumbnail} 
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Si la thumbnail ne charge pas, afficher l'icône par défaut
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback si la thumbnail ne charge pas */}
+                    <div 
+                      className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center absolute inset-0" 
+                      style={{ display: 'none' }}
+                    >
                       <Play size={48} className="text-gray-500" />
                     </div>
                     {/* Durée de la vidéo */}
@@ -218,14 +242,40 @@ export default function NosPhotos() {
             {/* Contenu du modal */}
             <div className="backdrop-blur-md bg-black/50 border border-white/20 rounded-2xl overflow-hidden">
               {selectedMedia.type === 'photo' ? (
-                <div className="aspect-video bg-gray-800 flex items-center justify-center">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                <div className="aspect-video bg-black flex items-center justify-center">
+                  <img 
+                    src={selectedMedia.src} 
+                    alt={selectedMedia.alt}
+                    className="w-full h-full object-contain"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div 
+                    className="w-full h-full bg-black flex items-center justify-center" 
+                    style={{ display: 'none' }}
+                  >
                     <Image size={64} className="text-gray-500" />
                   </div>
                 </div>
               ) : (
-                <div className="aspect-video bg-gray-800 flex items-center justify-center">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                <div className="aspect-video bg-black flex items-center justify-center">
+                  <video 
+                    src={selectedMedia.src} 
+                    controls
+                    className="w-full h-full"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  >
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                  </video>
+                  <div 
+                    className="w-full h-full bg-black flex items-center justify-center" 
+                    style={{ display: 'none' }}
+                  >
                     <Play size={64} className="text-gray-500" />
                   </div>
                 </div>

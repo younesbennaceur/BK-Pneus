@@ -48,6 +48,27 @@ export default function Navbar() {
             >
               Actus
             </Link>
+             <Link 
+              to="/Services" 
+              className={`transition-colors font-oswald duration-200 font-meduim ${
+                isActiveLink('/Services') 
+                  ? 'text-red-500' 
+                  : 'text-white hover:text-red-400'
+              }`}
+            >
+              Services
+            </Link>
+              <Link 
+              to="/Zones_dintervention" 
+              className={`transition-colors font-oswald duration-200 font-meduim ${
+                isActiveLink('/Zones_dintervention') 
+                  ? 'text-red-500' 
+                  : 'text-white hover:text-red-400'
+              }`}
+            >
+              Zones d'intervention
+            </Link>
+            
             <Link 
               to="/nosphotos" 
               className={`transition-colors font-oswald duration-200 font-meduim ${
@@ -77,7 +98,7 @@ export default function Navbar() {
               className="bg-red-600 hover:bg-red-700 font-oswald font-meduim text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors duration-200"
             >
               <Phone size={18} />
-              <span>07 64 46 66 21</span>
+              <span>06.52.69.32.93</span>
             </a>
           </div>
 
@@ -127,6 +148,29 @@ export default function Navbar() {
               >
                 Nos photos
               </Link>
+
+                <Link 
+                to="/Zones_dintervention" 
+                className={`transition-colors font-oswald duration-200 font-meduim py-2 ${
+                  isActiveLink('/Zones_dintervention') 
+                    ? 'text-red-500' 
+                    : 'text-white hover:text-red-400'
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Zones d'intervention
+              </Link>
+                <Link 
+                to="/Services" 
+                className={`transition-colors font-oswald duration-200 font-meduim py-2 ${
+                  isActiveLink('/Services') 
+                    ? 'text-red-500' 
+                    : 'text-white hover:text-red-400'
+                }`}
+                onClick={() => setIsOpen(false)}
+              >
+                Services
+              </Link>
               <Link 
                 to="/contact" 
                 className={`transition-colors font-oswald duration-200 font-meduim py-2 ${
@@ -138,12 +182,14 @@ export default function Navbar() {
               >
                 Contact
               </Link>
+             
+              
                <a 
-                href="tel:0764466621" 
+                href="tel:0652693293" 
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg flex items-center justify-center space-x-2 transition-colors duration-200 mt-4"
               >
                 <Phone size={18} />
-                <span>07 64 46 66 21</span>
+                <span>06.52.69.32.93</span>
               </a>
             </div>
           </div>
