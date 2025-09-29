@@ -65,7 +65,7 @@ export default function Hero() {
             </h1>
             
             <p className="font-poppins text-base sm:text-lg md:text-lg text-gray-200 max-w-4xl mb-6 sm:mb-8 leading-relaxed">
-              K-PNEUS Dépannage & Assistance intervient à votre domicile, au bureau et n'importe 
+              BK-PNEUS Dépannage & Assistance intervient à votre domicile, au bureau et n'importe 
               où dans l'Île-de-France pour réparer ou changer vos pneus crevés 7/7 et 24/24
             </p>
             
