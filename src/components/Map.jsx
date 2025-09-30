@@ -149,16 +149,7 @@ export default function MapAccordion() {
           </div>
           
          
-          <div>
-             <h1 className="text-right text-2xl font-bold text-white mb-1">
-            Ouverture d'un nouveau
-          </h1>
-            <h2 className=" text-2xl font-bold">
-            <span className="text-white">centre </span>
-            <span className="text-red-500">Livry-Gargan 93</span>
-          </h2>
-
-          </div>
+          
           
         </div>
 
