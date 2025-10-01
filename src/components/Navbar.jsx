@@ -94,7 +94,7 @@ export default function Navbar() {
           {/* Phone Button Desktop */}
           <div className="hidden md:block">
             <a 
-              href="tel:0764466621" 
+              href="tel:0652693293" 
               className="bg-red-600 hover:bg-red-700 font-oswald font-meduim text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors duration-200"
             >
               <Phone size={18} />
